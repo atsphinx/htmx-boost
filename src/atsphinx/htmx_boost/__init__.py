@@ -1,4 +1,5 @@
 """This is root of package."""
+
 from sphinx.application import Sphinx
 
 __version__ = "0.0.0"

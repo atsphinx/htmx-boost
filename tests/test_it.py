@@ -1,4 +1,5 @@
 """Standard integration tests."""
+
 from io import StringIO
 
 import pytest

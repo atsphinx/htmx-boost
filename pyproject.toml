@@ -33,8 +33,10 @@ build-backend = "hatchling.build"
 [tool.rye]
 managed = true
 dev-dependencies = [
-    "sphinx~=7.2.6",
+    "furo~=2024.1.29",
     "pytest~=8.0.2",
+    "sphinx~=7.2.6",
+    "sphinx-rtd-theme~=2.0.0",
 ]
 
 [tool.rye.scripts]

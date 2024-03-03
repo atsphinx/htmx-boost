@@ -10,7 +10,9 @@ __version__ = "0.1.0"
 
 class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101
     def render(self, template: str, context: dict) -> str:  # noqa: D102
-        out = self.environment.get_template(template).render(context)
+        out = super().render(template, context)
+        if not template.endswith(".html"):
+            return out
         soup = BeautifulSoup(out, "html.parser")
         soup.body["hx-boost"] = "true"
         return soup.prettify()

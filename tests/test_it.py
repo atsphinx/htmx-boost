@@ -14,7 +14,9 @@ def test__it(app: SphinxTestApp, status: StringIO, warning: StringIO):
     """Test to pass."""
 
 
-@pytest.mark.parametrize("theme", ["alabaster", "haiku", "furo", "sphinx_rtd_theme"])
+@pytest.mark.parametrize(
+    "theme", ["alabaster", "haiku", "nonav", "furo", "sphinx_rtd_theme"]
+)
 def test__work_on_theme(
     sphinx_test_tempdir: Path, rootdir: Path, make_app: callable, theme: str
 ):
@@ -30,3 +32,8 @@ def test__work_on_theme(
     app.build()
     soup = BeautifulSoup((app.outdir / "index.html").read_text(), "html.parser")
     assert "hx-boost" in soup.body.attrs
+
+
+@pytest.mark.sphinx("html", confoverrides={"html_use_opensearch": True})
+def test__with_opensearch(app: SphinxTestApp, status: StringIO, warning: StringIO):
+    app.build()

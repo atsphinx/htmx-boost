@@ -7,7 +7,7 @@ author = "Kazuya Takei"
 release = __version__
 
 # -- General configuration
-extensions = ["atsphinx.htmx_boost"]
+extensions = ["atsphinx.htmx_boost", "sphinx.ext.githubpages"]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 

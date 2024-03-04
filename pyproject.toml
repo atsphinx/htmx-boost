@@ -32,6 +32,12 @@ classifiers = [
     "Topic :: Text Processing :: Markup :: reStructuredText",
 ]
 
+[project.urls]
+Home = "https://github.com/atsphinx/htmx-boost"
+Repository = "https://github.com/atsphinx/htmx-boost"
+Issues = "https://github.com/atsphinx/htmx-boost/issues"
+Changelog = "https://github.com/atsphinx/htmx-boost/blob/main/CHANGES.rst"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

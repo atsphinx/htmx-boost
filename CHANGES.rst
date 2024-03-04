@@ -1,9 +1,9 @@
-v0.1.0
+v0.1.1
 ======
 
-:date: 2024-03-03 (JST)
+:date: 2024-03-04 (JST)
 
-Features
---------
+Bug fixes
+---------
 
-* First implement
+* It does not run process if target is not HTML.

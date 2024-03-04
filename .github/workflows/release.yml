@@ -35,7 +35,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: 'dist/*'
-          body: 'See https://github.com/atsphinx/htmx-boost/blob/main/CHANGES.rst'
+          bodyFile: 'CHANGES.rst'
           draft: false
           name: Release ${{ github.ref_name }}
           tag: ${{ github.ref }}

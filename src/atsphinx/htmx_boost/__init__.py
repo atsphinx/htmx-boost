@@ -15,6 +15,10 @@ class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101
             return out
         soup = BeautifulSoup(out, "html.parser")
         soup.body["hx-boost"] = "true"
+        # Exclude 'search' page from boost targets
+        search_form = soup.find("form", {"action": context["pathto"]("search")})
+        if search_form:
+            search_form["hx-boost"] = "false"
         return soup.prettify()
 
 

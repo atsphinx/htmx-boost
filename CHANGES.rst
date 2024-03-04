@@ -1,9 +1,9 @@
-v0.1.1
+v0.1.2
 ======
 
 :date: 2024-03-04 (JST)
 
-Bug fixes
----------
+Miscellaneous
+-------------
 
-* It does not run process if target is not HTML.
+* Update metadata for PyPI.

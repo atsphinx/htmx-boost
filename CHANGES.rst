@@ -1,9 +1,10 @@
-v0.1.2
+v0.1.3
 ======
 
-:date: 2024-03-04 (JST)
+:date: 2024-03-05 (JST)
 
 Miscellaneous
 -------------
 
-* Update metadata for PyPI.
+* Update classifiers
+* Add URLs to display on PyPI.

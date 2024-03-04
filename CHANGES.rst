@@ -1,10 +1,9 @@
-v0.1.3
+v0.1.4
 ======
 
 :date: 2024-03-05 (JST)
 
-Miscellaneous
--------------
+Bug fixes
+---------
 
-* Update classifiers
-* Add URLs to display on PyPI.
+* Exclude ``form`` tags from ``hx-boost`` targets.

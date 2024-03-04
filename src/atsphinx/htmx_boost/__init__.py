@@ -5,7 +5,7 @@ from sphinx.application import Sphinx
 from sphinx.config import Config
 from sphinx.jinja2glue import BuiltinTemplateLoader
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 
 class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101

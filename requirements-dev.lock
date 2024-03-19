@@ -10,6 +10,8 @@
 -e file:.
 alabaster==0.7.16
     # via sphinx
+atsphinx-helper==0.1.0
+    # via atsphinx-htmx-boost
 babel==2.14.0
     # via sphinx
 beautifulsoup4==4.12.3
@@ -49,6 +51,7 @@ snowballstemmer==2.2.0
 soupsieve==2.5
     # via beautifulsoup4
 sphinx==7.2.6
+    # via atsphinx-helper
     # via atsphinx-htmx-boost
     # via furo
     # via sphinx-basic-ng

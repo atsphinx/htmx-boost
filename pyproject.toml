@@ -8,6 +8,7 @@ authors = [
 dependencies = [
     "beautifulsoup4",
     "sphinx",
+    "atsphinx-helper",
 ]
 readme = "README.rst"
 requires-python = ">= 3.8"

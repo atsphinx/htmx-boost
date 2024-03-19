@@ -1,9 +1,21 @@
-v0.1.4
+v0.2.0
 ======
 
-:date: 2024-03-05 (JST)
+:date: 2024-03-20 (JST)
 
-Bug fixes
----------
+Breaking changes
+----------------
 
-* Exclude ``form`` tags from ``hx-boost`` targets.
+* Set ``hx-boost`` internal ``a`` elements instead of ``body``.
+
+  * It will disable boost works for ``form`` elements.
+
+Features
+--------
+
+* Add ``htmx_boost_preload`` option to enable htmx-extension.
+
+Miscellaneous
+-------------
+
+* Update local development environment.

@@ -15,3 +15,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "furo"
 html_title = f"{project} v{release}"
 html_static_path = ["_static"]
+
+# -- Options for extensions
+# For atsphinx.htmx_boost
+htmx_boost_preload = "mouseover"

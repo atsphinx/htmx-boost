@@ -51,6 +51,7 @@ dev-dependencies = [
     "pytest~=8.0.2",
     "sphinx~=7.2.6",
     "sphinx-rtd-theme~=2.0.0",
+    "esbonio~=0.16.4",
 ]
 
 [tool.rye.scripts]
@@ -58,6 +59,7 @@ setup = {chain = ["setup:sync", "setup:pre-commit"]}
 "setup:sync" = "rye sync --no-lock --all-features"
 "setup:pre-commit" = "pre-commit install"
 bump = "./tools/release-commit.py"
+doc = "make -C doc"
 
 [tool.ruff.lint]
 select = ["C90", "D", "E", "F", "I", "W"]

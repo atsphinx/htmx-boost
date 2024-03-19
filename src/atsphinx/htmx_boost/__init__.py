@@ -14,9 +14,8 @@ class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101
         if not template.endswith(".html"):
             return out
         soup = BeautifulSoup(out, "html.parser")
-        soup.body["hx-boost"] = "true"
-        for form in soup.find_all("form"):
-            form["hx-boost"] = "false"
+        for a in soup.find_all("a", {"class": "internal"}):
+            a["hx-boost"] = "true"
         return soup.prettify()
 
 

@@ -32,7 +32,11 @@ def test__work_on_theme(
     )
     app.build()
     soup = BeautifulSoup((app.outdir / "index.html").read_text(), "html.parser")
-    assert "hx-boost" in soup.body.attrs
+    for a in soup.find_all("a"):
+        if "internal" in a.attrs.get("class", []):
+            assert "hx-boost" in a.attrs
+        if "internal" not in a.attrs.get("class", []):
+            assert "hx-boost" not in a.attrs
 
 
 @pytest.mark.sphinx("html", confoverrides={"html_use_opensearch": True})

@@ -56,31 +56,9 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
   deploy-doc:
-    runs-on: ubuntu-latest
+    needs: [build]
     permissions:
       pages: write
       id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Configure venv
-        run: |
-          pip install uv
-          uv venv
-          uv pip install -r requirements-dev.lock
-      - name: Run tests
-        run: |
-          source .venv/bin/activate
-          make -C doc dirhtml
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: doc/_build/dirhtml
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    uses: './.github/workflows/deploy-doc.yml'
+    secrets: inherit

@@ -21,7 +21,7 @@ class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101
         for a in soup.find_all("a", {"class": "internal"}):
             a["hx-boost"] = "true"
             a["preload"] = preload
-        return soup.prettify()
+        return str(soup)
 
 
 @emit_only(formats=["html"])

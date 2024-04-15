@@ -54,5 +54,5 @@ def setup(app: Sphinx):
     return {
         "version": __version__,
         "env_version": 1,
-        "paralell_read_safe": True,
+        "parallel_read_safe": True,
     }

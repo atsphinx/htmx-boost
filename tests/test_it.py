@@ -71,3 +71,10 @@ def test__work_with_preload(
 @pytest.mark.sphinx("html", confoverrides={"html_use_opensearch": True})
 def test__with_opensearch(app: SphinxTestApp, status: StringIO, warning: StringIO):
     app.build()
+
+
+@pytest.mark.sphinx("html")
+def test__inline_code(app: SphinxTestApp):
+    app.build()
+    html = (app.outdir / "index.html").read_text()
+    assert "</span></code>" in html

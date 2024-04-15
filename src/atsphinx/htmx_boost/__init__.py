@@ -14,7 +14,7 @@ class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101
         out = super().render(template, context)
         if not template.endswith(".html"):
             return out
-        soup = BeautifulSoup(out, "html.parser")
+        soup = BeautifulSoup(out, "lxml")
         preload = context.get("htmx_boost_preload", "")
         if preload:
             soup.body.attrs["hx-ext"] = "preload"

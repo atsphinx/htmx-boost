@@ -1,21 +1,15 @@
-v0.2.0
+v0.2.1
 ======
 
-:date: 2024-03-20 (JST)
+:date: 2024-04-15 (JST)
 
-Breaking changes
-----------------
+Bug fixes
+---------
 
-* Set ``hx-boost`` internal ``a`` elements instead of ``body``.
-
-  * It will disable boost works for ``form`` elements.
-
-Features
---------
-
-* Add ``htmx_boost_preload`` option to enable htmx-extension.
+- Fix that rendered html broken ``code`` tag.
+- Use third-party parser for leniently.
 
 Miscellaneous
 -------------
 
-* Update local development environment.
+- Use age-cli

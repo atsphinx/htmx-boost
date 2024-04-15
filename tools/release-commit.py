@@ -24,9 +24,8 @@ def get_version() -> str:  # noqa: D103
 
 def bump_version(level: str) -> str:  # noqa: D103
     """Bump version for sources."""
-    cmd = ["rye", "version", "--bump", level]
+    cmd = ["age", level]
     subprocess.run(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-    return get_version()
 
 
 def replace_version(target, current_version: str, new_version: str):
@@ -78,13 +77,12 @@ def update_changes(current_version: str, new_version: str):
 
 def main(args: argparse.Namespace):
     """Handle multi functions."""
-    pyproject = tomllib.loads((root / "pyproject.toml").read_text())
-    current_version = get_version()
+    pyproject_toml = root / "pyproject.toml"
+    current_version = tomllib.loads(pyproject_toml.read_text())["project"]["version"]
     print(f"Current version: v{current_version}")
-    new_version = bump_version(args.level)
+    bump_version(args.level)
+    new_version = tomllib.loads(pyproject_toml.read_text())["project"]["version"]
     print(f"Next version:    v{new_version}")
-    for target in pyproject["tool"]["local"]["bumpversion"]["files"]:
-        replace_version(target, current_version, new_version)
     update_changes(current_version, new_version)
 
 

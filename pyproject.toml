@@ -70,11 +70,6 @@ select = ["C90", "D", "E", "F", "I", "W"]
 [tool.ruff.lint.pydocstyle]
 convention = "pep257"
 
-[[tool.local.bumpversion.files]]
-filename = "src/atsphinx/htmx_boost/__init__.py"
-search = "__version__ = \"{current_version}\""
-replace = "__version__ = \"{new_version}\""
-
 [tool.hatch.metadata]
 allow-direct-references = true
 

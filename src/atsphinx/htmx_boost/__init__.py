@@ -16,6 +16,9 @@ class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101
         if not template.endswith(".html"):
             return out
         soup = BeautifulSoup(out, "lxml")
+        # NOTE: Define as that it must convert only full-speced html (has head tag.)
+        if not soup.head:
+            return out
         preload = context.get("htmx_boost_preload", "")
         if preload:
             soup.body.attrs["hx-ext"] = "preload"

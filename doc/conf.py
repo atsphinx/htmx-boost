@@ -9,6 +9,7 @@ release = __version__
 
 # -- General configuration
 extensions = [
+    "atsphinx.goto_top",
     "atsphinx.htmx_boost",
     "atsphinx.mini18n",
     "sphinx.ext.githubpages",
@@ -43,6 +44,8 @@ html_sidebars = {
 intersphinx_mapping = {
     "sphinx": ("https://www.sphinx-doc.org/en/master", None),
 }
+# For atsphinx.goto_top
+goto_top_design = "image"
 # For atsphinx.htmx_boost
 htmx_boost_preload = "mouseover"
 # For atsphinx.mini18n,

@@ -11,6 +11,18 @@ wheels = [
 ]
 
 [[package]]
+name = "atsphinx-goto-top"
+version = "0.1.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "sphinx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0e/29/e1a14d9fd02322a01134d217d35ec74437f4fc5402445f7dfbf33a78fc81/atsphinx_goto_top-0.1.3.tar.gz", hash = "sha256:a83a8b6a21c77999810e8b03647426f16370f0fc6b29fdc2c22b9b9238486095", size = 76448 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4b/34/f146e8142f025edf9959a564011809a1ed26a5ea7045def8a966ba111c5c/atsphinx_goto_top-0.1.3-py3-none-any.whl", hash = "sha256:237e58f0158484b04a84fda239475e39499b64005321ffd469c4a20c0c78493a", size = 8145 },
+]
+
+[[package]]
 name = "atsphinx-helper"
 version = "0.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -35,6 +47,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "atsphinx-goto-top" },
     { name = "atsphinx-mini18n" },
     { name = "esbonio" },
     { name = "furo" },
@@ -55,6 +68,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "atsphinx-goto-top", specifier = ">=0.1.3" },
     { name = "atsphinx-mini18n", specifier = "~=0.2.0" },
     { name = "esbonio", specifier = "~=0.16.4" },
     { name = "furo", specifier = "~=2024.1.29" },

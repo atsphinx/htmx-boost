@@ -12,6 +12,7 @@ pre-commit:
       glob: '*.py'
       exclude:
         - '**/conf.py'
+        - 'tests/**.py'
       run: 'uv run mypy {staged_files}'
     doc8:
       glob: '*.rst'

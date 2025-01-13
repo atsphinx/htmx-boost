@@ -1,7 +1,9 @@
-name: 'Deployment document'
+name: 'Deploy document'
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - 'main'
   workflow_dispatch:
 
 jobs:
@@ -15,22 +17,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version-file: '.python-version'
-      - name: Configure venv
+      - uses: jdx/mise-action@v2
+      - name: 'Configure dependencies'
         run: |
-          pip install uv
-          uv venv
-          uv pip install -r requirements-dev.lock
-      - name: Run tests
+          uv sync --frozen --all-extras
+      - name: 'Build document'
         run: |
-          source .venv/bin/activate
-          make -C doc mini18n-dirhtml
-      - name: Upload artifact
+          task setup docs:build
+      - name: 'Upload artifact'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: doc/_build/mini18n-dirhtml
-      - name: Deploy to GitHub Pages
+          path: docs/_build/mini18n-dirhtml
+      - name: 'Deploy to GitHub Pages'
         id: deployment
         uses: actions/deploy-pages@v4

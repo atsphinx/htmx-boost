@@ -1,10 +1,11 @@
 """This is root of package."""
 
-from atsphinx.helper.decorators import emit_only
 from bs4 import BeautifulSoup
 from sphinx.application import Sphinx
+from sphinx.config import Config
 from sphinx.jinja2glue import BuiltinTemplateLoader
-from sphinx.util.docutils import nodes
+
+from atsphinx.helper.decorators import emit_only
 
 __version__ = "0.2.1"
 
@@ -29,27 +30,23 @@ def setup_custom_loader(app: Sphinx):
     """Inject extra values about htmx-boost into generated config."""
     app.config.template_bridge = "atsphinx.htmx_boost.WithHtmxTemplateLoader"
     app.builder.init()
-    app.builder.add_js_file("https://unpkg.com/htmx.org@1.9.10")
-    if app.config.htmx_boost_preload:
-        app.builder.add_js_file("https://unpkg.com/htmx.org@1.9.10/dist/ext/preload.js")
 
 
-@emit_only(formats=["html"])
-def pass_extra_context(  # noqa: D103
-    app: Sphinx,
-    pagename: str,
-    templatename: str,
-    context: dict,
-    doctree: nodes.document,
-):
+def pass_extra_context(app: Sphinx, config: Config):  # noqa: D103
+    config.html_js_files.append("https://unpkg.com/htmx.org@1.9.10")
     if app.config.htmx_boost_preload:
-        context["htmx_boost_preload"] = app.config.htmx_boost_preload
+        config.html_js_files.append(
+            "https://unpkg.com/htmx.org@1.9.10/dist/ext/preload.js"
+        )
+        if not hasattr(config, "html_context"):
+            config.html_context = {}
+        config.html_context["htmx_boost_preload"] = app.config.htmx_boost_preload
 
 
 def setup(app: Sphinx):
     """Load as Sphinx-extension."""
     app.connect("builder-inited", setup_custom_loader)
-    app.connect("html-page-context", pass_extra_context)
+    app.connect("config-inited", pass_extra_context)
     app.add_config_value("htmx_boost_preload", "", "env", [str])
     return {
         "version": __version__,

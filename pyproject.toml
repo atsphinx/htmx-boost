@@ -12,7 +12,7 @@ dependencies = [
     "atsphinx-helper",
 ]
 readme = "README.rst"
-requires-python = ">= 3.8"
+requires-python = ">= 3.9"
 license = "Apache-2.0"
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -44,7 +44,7 @@ Changelog = "https://github.com/atsphinx/htmx-boost/blob/main/CHANGES.rst"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.rye]
+[tool.uv]
 managed = true
 dev-dependencies = [
     "furo~=2024.1.29",

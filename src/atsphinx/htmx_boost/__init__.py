@@ -7,7 +7,7 @@ from sphinx.jinja2glue import BuiltinTemplateLoader
 
 from atsphinx.helper.decorators import emit_only  # type: ignore[import-untyped]
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 
 
 class WithHtmxTemplateLoader(BuiltinTemplateLoader):  # noqa: D101

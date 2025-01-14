@@ -1,15 +1,18 @@
-v0.2.1
+v0.2.2
 ======
 
-:date: 2024-04-15 (JST)
+:date: 2025-01-14 (JST)
 
 Bug fixes
 ---------
 
-- Fix that rendered html broken ``code`` tag.
-- Use third-party parser for leniently.
+- Change rule to inject attributes.
 
 Miscellaneous
 -------------
 
-- Use age-cli
+- Use latest workspace environment.
+
+  * uv instead of Rye
+  * lefthook instead of pre-commit
+  * go-task instead of makefiles

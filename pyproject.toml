@@ -1,7 +1,7 @@
 [project]
 name = "atsphinx-htmx-boost"
 version = "0.2.2"
-description = "[EXPERIMENTAL] Improve user-experience for Sphinx document."
+description = "Improve user-experience for Sphinx document."
 authors = [
     { name = "Kazuya Takei", email = "myself@attakei.net" }
 ]
@@ -15,7 +15,7 @@ readme = "README.rst"
 requires-python = ">= 3.10"
 license = "Apache-2.0"
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Framework :: Sphinx",
     "Framework :: Sphinx :: Extension",
     "Intended Audience :: Developers",

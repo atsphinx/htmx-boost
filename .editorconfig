@@ -17,11 +17,11 @@ end_of_line = crlf
 charset = sjis
 
 # 2 space indentation
-[*.{yml,js,json,rst,html,css,md,toml}]
+[*.{yml,js,json,rst,html,css,md}]
 indent_size = 2
 
 # 4 space indentation
-[*.{py}]
+[*.{py.toml}]
 indent_size = 4
 
 # Tab indentation (no size specified)

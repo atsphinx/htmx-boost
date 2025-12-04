@@ -78,3 +78,14 @@ def test__inline_code(app: SphinxTestApp):
     app.build()
     html = (app.outdir / "index.html").read_text()
     assert "</span></code>" in html
+
+
+@pytest.mark.sphinx("html", testroot="parallel", parallel=2)
+def test__build_parallel(app: SphinxTestApp, status: StringIO, warning: StringIO):
+    """Test to pass."""
+    for idx in range(1, 10):
+        shutil.copy(
+            (app.srcdir / "sub-0.rst"),
+            (app.srcdir / f"sub-{idx}.rst"),
+        )
+    app.build()

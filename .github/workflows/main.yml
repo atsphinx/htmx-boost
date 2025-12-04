@@ -11,15 +11,18 @@ on:
   schedule:
     - cron: '0 9 * * 5'  # 18:00 on Friday JST
 
+env:
+  TASK_X_REMOTE_TASKFILES: 1
+
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
+      - uses: actions/checkout@v6
+      - uses: './.github/actions/setup-aqua'
       - name: 'Configure dependencies'
         run: |
-          uv sync --frozen --all-extras
+          task setup --yes
       - name: 'Run linters'
         run: |
           lefthook run pre-commit --all-files
@@ -36,13 +39,13 @@ jobs:
           - '3.14'
         workspace: ['locked', 'latest']
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
+      - uses: './.github/actions/setup-aqua'
       - name: 'Install to build deps'
         run: |
           sudo apt-get update
           sudo apt-get install -y -f \
           libxml2-dev libxslt1-dev
-      - uses: jdx/mise-action@v2
       - name: 'Configure python version (for uv)'
         run: echo '${{ matrix.python-version }}' > .python-version
       - name: 'Configure env as locked deps by uv.lock'
@@ -59,8 +62,8 @@ jobs:
   docs-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
+      - uses: actions/checkout@v6
+      - uses: './.github/actions/setup-aqua'
       - name: 'Configure dependencies'
         run: |
           uv sync --frozen --all-extras
@@ -70,8 +73,8 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
+      - uses: actions/checkout@v6
+      - uses: './.github/actions/setup-aqua'
       - name: 'Try building as package'
         run: |
           uv build

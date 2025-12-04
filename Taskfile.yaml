@@ -8,7 +8,7 @@ tasks:
   setup:
     desc: 'Setup workspace'
     cmds:
-      - 'uv sync --frozen --all-extras'
+      - 'uv sync --all-groups --frozen'
       - 'lefthook install'
   verify:
     desc: 'Verify environment by all procs'
@@ -25,7 +25,7 @@ tasks:
       LEVEL: '{{index .MATCH 0}}'
     cmds:
       - 'age {{.LEVEL}}'
-      - 'uv sync --all-extras'  # To write out as lock-file
+      - 'uv sync --all-groups'  # To write out as lock-file
 
 includes:
   docs: './doc'

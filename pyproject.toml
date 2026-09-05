@@ -63,7 +63,7 @@ docs = [
     "furo~=2024.1.29",
     "atsphinx-goto-top>=0.1.4",
     "atsphinx-mini18n~=0.2.0",
-    "sphinx-intl~=2.1.0",
+    "sphinx-intl~=2.4.0",
 ]
 
 [build-system]

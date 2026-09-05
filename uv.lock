@@ -99,7 +99,7 @@ dev = [
     { name = "pytest", specifier = "~=8.0.2" },
     { name = "ruff", specifier = ">=0.9.1" },
     { name = "sphinx", specifier = "~=7.2.6" },
-    { name = "sphinx-intl", specifier = "~=2.1.0" },
+    { name = "sphinx-intl", specifier = "~=2.4.0" },
     { name = "sphinx-rtd-theme", specifier = "~=2.0.0" },
     { name = "ty", specifier = ">=0.0.1a31" },
 ]
@@ -107,7 +107,7 @@ docs = [
     { name = "atsphinx-goto-top", specifier = ">=0.1.4" },
     { name = "atsphinx-mini18n", specifier = "~=0.2.0" },
     { name = "furo", specifier = "~=2024.1.29" },
-    { name = "sphinx-intl", specifier = "~=2.1.0" },
+    { name = "sphinx-intl", specifier = "~=2.4.0" },
 ]
 lint = [
     { name = "doc8", specifier = ">=1.1.2" },
@@ -659,15 +659,6 @@ wheels = [
 ]
 
 [[package]]
-name = "setuptools"
-version = "75.8.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz", hash = "sha256:c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6", size = 1343222, upload-time = "2025-01-08T18:28:23.98Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/69/8a/b9dc7678803429e4a3bc9ba462fa3dd9066824d3c607490235c6a796be5a/setuptools-75.8.0-py3-none-any.whl", hash = "sha256:e3982f444617239225d675215d51f6ba05f845d4eec313da4418fdbb56fb27e3", size = 1228782, upload-time = "2025-01-08T18:28:20.912Z" },
-]
-
-[[package]]
 name = "snowballstemmer"
 version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -726,17 +717,16 @@ wheels = [
 
 [[package]]
 name = "sphinx-intl"
-version = "2.1.0"
+version = "2.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "babel" },
     { name = "click" },
-    { name = "setuptools" },
     { name = "sphinx" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3f/49/9229216d3fdce197912e4756e044f3d3fbac73326ef8a49af186d7c2832b/sphinx-intl-2.1.0.tar.gz", hash = "sha256:9d9849ae42515b39786824e99f1e30db0404c377b01bb022690fc932b0221c02", size = 19144, upload-time = "2023-02-05T05:56:29.511Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/62/ba/f4d6a9573c81a9248cf2f354c09158cbca7b3f40eae296b6f69850c26f8e/sphinx_intl-2.4.0.tar.gz", hash = "sha256:f13173bfc4a131f74ea082a5820386e2bcdc020b3003378b029d438f404edbde", size = 28825, upload-time = "2026-08-30T03:38:50.489Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2d/e9/58e19bc399a9f57b40cc9edfd8735fe9853dd2eca4a80552d741288a4770/sphinx_intl-2.1.0-py3-none-any.whl", hash = "sha256:9798946b995989de691387651d70c3fc191275b587e2e519655541edfd7bbd68", size = 12784, upload-time = "2023-02-05T05:56:27.256Z" },
+    { url = "https://files.pythonhosted.org/packages/77/2a/d8f012d47588ec63409d172ccf2c3afc035d14e2b2a52a88339f86bbc058/sphinx_intl-2.4.0-py3-none-any.whl", hash = "sha256:704567d1b22f7e8ed1cfc8aa2306e6617a1d17782c9a5891898b20267b15b041", size = 13000, upload-time = "2026-08-30T03:38:49.206Z" },
 ]
 
 [[package]]

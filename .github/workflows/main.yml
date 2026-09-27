@@ -18,7 +18,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: './.github/actions/setup-aqua'
       - name: 'Configure dependencies'
         run: |
@@ -39,7 +39,7 @@ jobs:
           - '3.14'
         workspace: ['locked', 'latest']
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: './.github/actions/setup-aqua'
       - name: 'Install to build deps'
         run: |
@@ -62,7 +62,7 @@ jobs:
   docs-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: './.github/actions/setup-aqua'
       - name: 'Configure dependencies'
         run: |
@@ -73,7 +73,7 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: './.github/actions/setup-aqua'
       - name: 'Try building as package'
         run: |

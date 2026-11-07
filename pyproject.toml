@@ -42,7 +42,7 @@ Changelog = "https://github.com/atsphinx/htmx-boost/blob/main/CHANGES.rst"
 
 [dependency-groups]
 dev = [
-    "esbonio~=0.16.4",
+    "esbonio~=2.1.0",
     {include-group = "lint"},
     {include-group = "test"},
     {include-group = "docs"},
